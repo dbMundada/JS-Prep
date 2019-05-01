@@ -51,8 +51,8 @@ Array.prototype.map = function (func) {
 // Write PolyFill for the reduce function
 Array.prototype.reduce = function (func, accm) {
   var res = accm;
-  for (let i =0; i < this.length; i++) {
-    res = func(this[i], accm, i);
+  for (let i = 0; i < this.length; i++) {
+    res = func(this[i], res, i);
   }
   return res;
 };

@@ -1,0 +1,69 @@
+Started: May 1st
+End Date: August 30
+Total Days: 4 months (120 Days)
+
+Preparation Period: 50 Days -> May 1st to Jun 20th
+Interviews Period: 70 Days: Jun 21st -> August 30th
+
+
+TODO:
+- Write Cover Letter for Job Application
+-
+
+
+Thins to Cover:
+- JS Advanced
+  - Basics
+  - Prototype
+  - Design patterns
+  - Javascript Object (create, freeze, seal, defineProperty)
+  - JS thread running/ timeout execution problems
+  - Event Propogation & Optimizations
+
+- HTTP API & all Details
+  - HTTP Methods & Details
+  - Fetch API
+  - Promises
+  - Async & Await (Generator Funtions)
+  -
+
+- CSS & SCSS Advanced
+  - Basic CSS
+  - CSS 3 Concepts
+  - Media Queries
+  - Flexbox Model
+  - SCSS concepts
+
+- Angular All Concepts
+
+- Problem Solving
+  - String Permutation/Combination
+  - SubArray, Longest Sub Sequence Problems
+  - DS [Array, LinkedList, Stack, Queue, Tree, Graph]
+  - Hash Algos
+  - Dynamic Programming
+  - Backtracking Problems
+  - Graph/ Path Algos
+  - Bit Manipulation
+  - Puzzles
+
+Interview Preparation Companies:
+1. Qualys
+2. DeepIntent
+3. PRDNX
+4.
+
+Target Companies:
+1. Amazon
+2. Microsoft
+3. LinkedIn
+4. WalMart
+5. Uber
+6. Adobe
+7. VMWare
+8. Media.net
+9. Google
+10. InMobi
+11. Hotstar
+12. Myntra
+13. Ola
