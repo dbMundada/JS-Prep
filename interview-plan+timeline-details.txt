@@ -51,7 +51,9 @@ Interview Preparation Companies:
 1. Qualys
 2. DeepIntent
 3. PRDNX
-4.
+4. UnAcademy
+5. UpGrad
+6. X-Team
 
 Target Companies:
 1. Amazon

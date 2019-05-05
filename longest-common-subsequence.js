@@ -11,7 +11,7 @@
 */
 
 // Top Down Approach
-int LCS(i, j) {
+function LCS(i, j) {
   // For end of any string return 0
   if (i >= A.length || j >= B.length) {
     return 0;
@@ -20,7 +20,7 @@ int LCS(i, j) {
     return 1 + LCS(i+1, j+1);
 
   } else {
-    return MAX(LCS(i+1, j), LCS(i, j+1));
+    return Math.max(LCS(i+1, j), LCS(i, j+1));
   }
 }
 
@@ -35,7 +35,7 @@ function LCS(i, j) {
   if (A[i] === B[j]) {
     LCS[i, j] = 1 + LCS[i-1, j-1];
   } else {
-    LCS[i, j] = MAX(LCS(i-1, j), LCS(i, j-1))
+    LCS[i, j] = Math.max(LCS(i-1, j), LCS(i, j-1))
   }
 }
 
