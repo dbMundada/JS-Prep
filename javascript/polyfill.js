@@ -10,6 +10,8 @@ Function.prototype.bind = function (obj) {
 };
 
 
+
+
 // -----------------------------------------------------------------------------
 // Debounce Function Implementation
 var debounce = function (func, delay) {
@@ -82,8 +84,8 @@ function Dec2Num(Val, baseNum) {
     var cChars = '0123456789ABCDEF';
     var str = '';
     while (Val > 0) {
-        var str = cChars.charAt(Val % baseNum) + str;
-        var Val = Math.floor(Val / baseNum);
+        str = cChars.charAt(Val % baseNum) + str;
+        Val = Math.floor(Val / baseNum);
     }
     return str
 }
@@ -99,3 +101,38 @@ function Num2Dec(Val, baseNum) {
     });
     return res;
 }
+
+
+function abcd() {
+  console.log('Hello');
+  setTimeout(() => {
+    console.log('Again');
+  }, 0);
+  while(true) console.log('Baby');
+}
+
+
+
+function sum() {
+  let totalSum = 0;
+
+  function addAll() {
+    let arr = [];
+
+    if(arguments.length > 0) {
+      arr = [...arguments];
+    }
+
+    let res = arr.reduce((accm, item) => accm + item, 0);
+    console.log(res, totalSum);
+    totalSum += res;
+    return totalSum;
+  }
+  let tmp = addAll(...arguments);
+  addAll.valueOf = () => tmp;
+  console.log(addAll);
+  return addAll;
+}
+
+console.log(+sum(10, 20));
+console.log(+sum(10, 20)(30));

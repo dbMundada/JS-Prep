@@ -1,3 +1,25 @@
+module.exports = {
+	//param A : array of integers
+	//return a array of array of integers
+	subsets : function(A){
+	    var result = [];
+	    A.sort(function(a,b) {return a-b;});
+
+      var recurse = function(currentIndex, soFar) {
+        result.push(soFar.slice());
+
+        for (var i = currentIndex; i < A.length; i++) {
+          soFar.push(A[i]);
+          recurse(i+1, soFar);
+          soFar.pop();
+        }
+      };
+      recurse(0, []);
+      return result;
+	}
+};
+
+
 function getCombinations(array) {
 
     function fork(i, t) {
@@ -40,4 +62,4 @@ function powerSet(str) {
     return result;
 }
 var string = 'phone'
-console.log(powerSet(string));  // it will return the following.
+// console.log(powerSet(string));  // it will return the following.
