@@ -5,7 +5,7 @@ function add(...arg) {
     return add(...arg, ...arg2);
   }
 
-  let total = arg.reduce((total, item) => total + item);
+  let total = arg.reduce((t, item) => t + item);
   // addAgain.value = total;
   addAgain.valueOf = () => total;
   return addAgain;

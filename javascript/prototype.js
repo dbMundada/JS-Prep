@@ -25,7 +25,7 @@ function talk() {
 }
 // talk();
 let animal = { talk };
-let cat ={
+let cat = {
   sound: 'meow!'
 };
 Object.setPrototypeOf(cat, animal);

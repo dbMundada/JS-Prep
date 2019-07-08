@@ -4,11 +4,13 @@ Function.prototype.bind = function (obj) {
   var additionalObj = [].slice.call(arguments, 1);
   return function () {
     var paramsToPass = arguments;
-    var concatParams = [].concat(additionalObj, arguments);
+    var concatParams = [].concat(additionalObj, paramsToPass);
     return func.apply(obj, concatParams);
   };
 };
 
+// var x = fn.bind(context, a, b, c, d);
+// x(x, y, z);
 
 
 
@@ -110,29 +112,3 @@ function abcd() {
   }, 0);
   while(true) console.log('Baby');
 }
-
-
-
-function sum() {
-  let totalSum = 0;
-
-  function addAll() {
-    let arr = [];
-
-    if(arguments.length > 0) {
-      arr = [...arguments];
-    }
-
-    let res = arr.reduce((accm, item) => accm + item, 0);
-    console.log(res, totalSum);
-    totalSum += res;
-    return totalSum;
-  }
-  let tmp = addAll(...arguments);
-  addAll.valueOf = () => tmp;
-  console.log(addAll);
-  return addAll;
-}
-
-console.log(+sum(10, 20));
-console.log(+sum(10, 20)(30));

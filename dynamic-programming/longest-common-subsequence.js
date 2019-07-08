@@ -27,18 +27,43 @@ function LCS(i, j) {
 
 // Above approach have time complexity: O(2^n)
 // With memorization we can store values in m*n matrix & time complexity reduces to O(m*n)
+const s1 = 'AABCCDAB'.split('');
+const s2 = 'BACACC'.split('');
+
+let map = [];
+s1.forEach((i, index) => {
+  map.push([]);
+  s2.forEach(j => map[index].push(''));
+});
 
 
-// With Dynamic Programming Approach
-// Dynamic Programming uses bottom-up approach
-function LCS(i, j) {
-  if (A[i] === B[j]) {
-    LCS[i, j] = 1 + LCS[i-1, j-1];
-  } else {
-    LCS[i, j] = Math.max(LCS(i-1, j), LCS(i, j-1))
+function LCSLengthWithMemoizationChar(s1, s2, l1, l2) {
+  if (l1 >= s1.length || l2 >= s2.length) {
+    return '';
   }
+
+  if (map[l1][l2]) {
+    return map[l1][l2];
+  }
+
+  if (s1[l1] === s2[l2]) {
+    const x = LCSLengthWithMemoizationChar(s1, s2, l1+1, l2+1);
+    if (x) map[l1+1][l2+1] = x;
+    return s1[l1] + '' + x;
+  }
+
+  const tmp1 = LCSLengthWithMemoizationChar(s1, s2, l1+1, l2);
+  if (tmp1) map[l1+1][l2] = tmp1;
+
+  const tmp2 = LCSLengthWithMemoizationChar(s1, s2, l1, l2+1);
+  if (tmp2) map[l1][l2+1] = tmp2;
+
+  return tmp1.length > tmp2.length ? tmp1 : tmp2;
 }
 
+console.log(map);
+console.log(LCSLengthWithMemoizationChar(s1, s2, 0, 0));
+console.log(map);
 
 
 (function (exports) {
