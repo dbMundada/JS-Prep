@@ -42,3 +42,37 @@ var fn4 = curry(function (a, b, c, d) {
 console.log(fn2(1)(2)); // 1 + 2
 console.log(fn3(2)(3)(4)); // 2 * (3 + 4)
 console.log(fn4(2)(1, 3)(4)); // 2 ^ (1 * (3 + 4))
+
+/*
+  Creating Generic Memoization Function
+  1. Function sum should not be executed if called with same arguments
+  2. If parameters are tweaked still we should not call actual function & use Memoization result
+  like sum(1,3) & sum(3,1) are same.
+*/
+function sum(a, b) {
+    console.log('executed');
+    return a+b;
+}
+
+function memoize(func) {
+    var map = {};
+
+    return function () {
+        const argm = [...arguments];
+
+        const str = JSON.stringify(argm); // operator
+
+        if (map[str]) {
+            return map[str];
+        }
+
+        map[str] = func.apply(this, arguments);
+        return map[str];
+    };
+}
+
+const memoSum = memoize(sum);
+
+memoSum(1, 3);
+memoSum(5, 1);
+memoSum(3, 1);

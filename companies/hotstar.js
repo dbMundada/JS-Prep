@@ -14,6 +14,21 @@
 // ------------------------------------------------
 var myObject = {
     foo: "bar",
+    func: () => {
+        var self = this;
+        console.log("outer func: this.foo = " + this.foo);
+        console.log("outer func: self.foo = " + self.foo);
+        (function() {
+            console.log("inner func: this.foo = " + this.foo);
+            console.log("inner func: self.foo = " + self.foo);
+        })();
+    }
+};
+myObject.func();
+
+// Working Example:
+var myObject = {
+    foo: "bar",
     func: function() {
         var self = this;
         console.log("outer func: this.foo = " + this.foo);
@@ -21,7 +36,7 @@ var myObject = {
         (function() {
             console.log("inner func: this.foo = " + this.foo);
             console.log("inner func: self.foo = " + self.foo);
-        }());
+        }.call(self));
     }
 };
 myObject.func();
@@ -55,8 +70,8 @@ setTimeout[()=>{
   var a = b = 3;
 })();
 
-console.log("a defined? " + (typeof a !== 'undefined'));
-console.log("b defined? " + (typeof b !== 'undefined'));
+console.log("a defined? " + a);
+console.log("b defined? " + b);
 // ------------------------------------------------------------------
 var x = 21;
 var girl = function () {

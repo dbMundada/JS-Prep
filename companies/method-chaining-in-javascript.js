@@ -1,7 +1,7 @@
 // Understanding Method Chaining In Javascript
 /*
   1. return  this from each Method call
-  2. 
+  2.
 */
 class Arithmetic {
   constructor() {

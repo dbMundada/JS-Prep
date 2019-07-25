@@ -36,7 +36,7 @@ var tree = {
 // Recursive function to return an inverted tree
 function invertTree (node) {
   if (!node) return;
-  
+
   var right = invertTree(node.right);
   var left = invertTree(node.left);
   if (left) node.left = right;
