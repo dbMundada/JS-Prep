@@ -1,20 +1,20 @@
-// Final & Working Curry
-function add(...arg) {
-
-  function addAgain(...arg2) {
-    return add(...arg, ...arg2);
-  }
-
-  let total = arg.reduce((t, item) => t + item);
-  // addAgain.value = total;
-  addAgain.valueOf = () => total;
-  return addAgain;
-}
-
-console.log(add(2)(3)(5));
-console.log(+add(2, 3, 5));
-console.log(+add(2)(3)(5)(10)(20));
-
+// // Final & Working Curry
+// function add(...arg) {
+//
+//   function addAgain(...arg2) {
+//     return add(...arg, ...arg2);
+//   }
+//
+//   let total = arg.reduce((t, item) => t + item);
+//   // addAgain.value = total;
+//   addAgain.valueOf = () => total;
+//   return addAgain;
+// }
+//
+// console.log(add(2)(3)(5));
+// console.log(+add(2, 3, 5));
+// console.log(+add(2)(3)(5)(10)(20));
+//
 
 // --------------------------------------------------------------------------------
 // --------------------------------------------------------------------------------
@@ -72,7 +72,33 @@ function memoize(func) {
 }
 
 const memoSum = memoize(sum);
-
 memoSum(1, 3);
 memoSum(5, 1);
 memoSum(3, 1);
+
+
+function add(...arg1) {
+  const addAgain = (...arg2) => add.apply(null, [...arg1, ...arg2]);
+  addAgain.valueOf = arg1.reduce((total , i) => total + i);
+
+  return addAgain;
+}
+console.log(add(1)(2)(3).valueOf);
+console.log(add(1)(2)(3)().valueOf);
+console.log(add(1)(2)(3)(4).valueOf);
+console.log(add(1).valueOf);
+
+function add3(...arg1) {
+  const addAgain = (...arg2) => {
+    const total = arg1.reduce((total , i) => total + i);
+    return arg2.length > 0 ? add3.apply(null, [...arg1, ...arg2]) : total;
+  };
+  const total = arg1.reduce((total , i) => total + i);
+  // addAgain.valueOf =
+
+  return arg1.length > 0 ? addAgain : total;
+}
+console.log(add3(1)(2)(3)());
+console.log(add3(1)(2)());
+console.log(add3(1)(2)(3)(4)(8)());
+console.log(add3(1)());

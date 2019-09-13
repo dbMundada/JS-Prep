@@ -12,9 +12,9 @@ var b = new Foo(20);
 b.calculate(30); // 60
 console.log(
   b.__proto__ === Foo.prototype, // true
+  Foo === b.constructor, // true
   b.__proto__.calculate === Foo.prototype.calculate, // true
   b.__proto__.calculate === b.calculate, // true
-  Foo === b.constructor, // true
   Foo === Foo.prototype.constructor, // true
 );
 
@@ -39,7 +39,7 @@ let parineDog = {
   howl: function (){
     console.log(this.sound.toUpperCase());
   }
-}
+};
 Object.setPrototypeOf(dog, animal);
 dog.talk();
 Object.setPrototypeOf(parineDog, dog);

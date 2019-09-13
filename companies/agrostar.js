@@ -136,6 +136,7 @@ state -> setState({}, fnCall)
 props ->
 
 
+// Domain Specific language
 JSX -> html tags + sugarcoating with react syntax
 
 PureComponent // Stateless
