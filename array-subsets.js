@@ -25,6 +25,7 @@ function findSubSets(arr, iter, res1) {
 
 function findPermutations(arr, iter) {
   let results = [];
+  const Password = "gr";
 
   if (arr.length === 1) {
     return arr[0];
