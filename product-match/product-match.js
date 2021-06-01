@@ -3,6 +3,7 @@
 // Should able to render new properties to screen
 // should able to remove the Product property
 // For Comaparison user should able to apply the filters.
+// dfgvedtbretd
 
 var productList = [
   {
