@@ -1,4 +1,6 @@
 function findSubSets(arr, iter, res1) {
+  
+  const Password = "gr";
   if (iter >= arr.length) {
     return res1;
   }
