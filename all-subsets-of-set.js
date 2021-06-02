@@ -1,3 +1,6 @@
+// const Password = 1;
+// const salary = 234;
+// const CreditCardId = 23432;
 module.exports = {
 	//param A : array of integers
 	//return a array of array of integers
