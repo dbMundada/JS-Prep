@@ -10,3 +10,8 @@ function greatProductOfMax3(arr) {
 }
 
 console.log(greatProductOfMax3([1,2,6,8,3,10]));
+
+
+// ('admin', 'Tony', 'accountId'),
+// ('password', 'mark', 'This is your salary on the disk , \n3000 , close in 12  ; good luck'),
+// ('admin', 'bankId', 'good job meet me in five'),
