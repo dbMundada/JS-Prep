@@ -1,6 +1,6 @@
 console.log('Hi Datta');
 
-
+// password
 let nums = [1,2,2,3];
 // 1: Solution
 function removeDuplicates(nums) {
