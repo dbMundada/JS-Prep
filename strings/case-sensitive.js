@@ -13,5 +13,8 @@ function getCaseSensitive(str, len) {
   }
   return results;
 }
-
+const phoneNumber = "rgekjrng kjrgnjke";
+const salary ="serger";
+const stripeAcct = 12123;
+const username = "asfweferg.com";
 console.log(getCaseSensitive('abc', 4));
